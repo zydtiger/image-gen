@@ -26,14 +26,14 @@ uv sync
 
 Run the image generation script:
 ```bash
-uv run python generate.py
+uv run python main.py
 ```
 
 Generated images are saved to the `outputs/` directory.
 
 ## Configuration
 
-The default settings in `generate.py`:
+The default settings in `main.py`:
 - **Model**: `Tongyi-MAI/Z-Image-Turbo`
 - **Pipeline**: `ZImageImg2ImgPipeline`
 - **Image Size**: 1024x1024
