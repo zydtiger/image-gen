@@ -1,0 +1,14 @@
+# Output files
+outputs/
+
+# Python cache
+__pycache__/
+*.py[oc]
+
+# Linting/type cache
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Virtual environments
+.venv/

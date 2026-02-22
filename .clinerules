@@ -1,0 +1,35 @@
+# Project Rules for Cline
+
+## Project Overview
+This is an image generation project using Hugging Face's diffusers library with the Z-Image-Turbo model.
+
+## Dependencies
+- Python 3.12+
+- diffusers
+- transformers
+- accelerate
+- torch (with CUDA 13.0 support)
+- pillow
+
+## Package Manager
+This project uses `uv` for package management:
+- `uv init` - Initialize project
+- `uv add <package>` - Add dependencies
+- `uv run python <script>` - Run Python scripts
+
+## Running the Image Generation
+```bash
+uv run python generate.py
+```
+
+## Model Information
+- Model: Tongyi-MAI/Z-Image-Turbo
+- Pipeline: ZImageImg2ImgPipeline
+- Default prompt: "1girl"
+- Output: outputs/generated.png
+
+## Output Directory
+Generated images are saved to `outputs/` directory. This directory is ignored by git.
+
+## CUDA Requirements
+This project requires CUDA-capable GPU. The torch package is configured to use PyTorch with CUDA 13.0 support via the pytorch-cu130 index.
