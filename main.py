@@ -1,7 +1,7 @@
 """Image generation script using Z-Image-Turbo."""
 
 import torch
-from diffusers import ZImageImg2ImgPipeline
+from diffusers.pipelines.z_image.pipeline_z_image_img2img import ZImageImg2ImgPipeline
 from PIL import Image
 
 # Load the Img2Img pipeline
@@ -9,7 +9,7 @@ pipe = ZImageImg2ImgPipeline.from_pretrained(
     "Tongyi-MAI/Z-Image-Turbo",
     torch_dtype=torch.bfloat16,
     variant="bf16",
-    revision="refs/pr/102"
+    revision="refs/pr/102",
 )
 pipe.to("cuda")
 
@@ -26,7 +26,7 @@ image = pipe(
     strength=1.0,  # Full transformation from the starting image
     num_inference_steps=9,
     guidance_scale=0.0,
-).images[0]
+).images[0] # type: ignore
 
 # Save the generated image
 output_path = "outputs/generated.png"
