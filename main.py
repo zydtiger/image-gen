@@ -8,6 +8,8 @@ from PIL import Image
 pipe = ZImageImg2ImgPipeline.from_pretrained(
     "Tongyi-MAI/Z-Image-Turbo",
     torch_dtype=torch.bfloat16,
+    variant="bf16",
+    revision="refs/pr/102"
 )
 pipe.to("cuda")
 
